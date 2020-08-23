@@ -25,7 +25,7 @@ const Formulario = (props) => {
     setCar({ ...car, [e.target.name]: e.target.value });
   };
   const guardar = async () => {
-    if (props.currCar === -1) {
+    if (car.id === -1) {
       await props.db.collection("carros").doc().set(car);
     } else {
       await props.db.collection("carros").doc(car.id).update(car);
